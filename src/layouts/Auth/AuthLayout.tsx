@@ -1,14 +1,15 @@
 import {  Outlet } from "react-router-dom";
- 
+import authImage from "../../assets/authFont.svg";
+
 
 const AuthLayout = () => {
   return (
-    <div className="flex  flex-row">
-        <div className="">
-            <Outlet/>
+    <div className="flex h-screen">
+        <div className="flex-1 flex justify-center items-start mt-[10%]">
+          <Outlet/>
         </div>
-        <div className="text-red-500">
-             fdfdf
+        <div className="flex-1 overflow-y-hidden relative">
+          <img src={authImage} alt='Логотип' className="w-full h-full object-cover"/>
         </div>
     </div>
   )

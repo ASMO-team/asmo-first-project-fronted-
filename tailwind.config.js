@@ -7,7 +7,7 @@ export default {
 theme: {
     extend: {
       fontFamily: {
-        intel: ['Intel', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
         sora: ['Sora', 'sans-serif'],
       },
     },
