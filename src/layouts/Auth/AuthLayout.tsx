@@ -2,7 +2,7 @@ import {  Outlet } from "react-router-dom";
 import authImage from "../../assets/authFont.svg";
 
 
-const AuthLayout = () => {
+export function AuthLayout() {
   return (
     <div className="flex h-screen">
         <div className="flex-1 flex justify-center items-start mt-[10%]">
@@ -14,6 +14,5 @@ const AuthLayout = () => {
     </div>
   )
 }
-
-export default AuthLayout
+ 
 

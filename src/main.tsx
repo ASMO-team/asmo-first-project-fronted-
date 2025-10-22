@@ -1,23 +1,46 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import AuthLayout from './layouts/Auth/AuthLayout';
+import { AuthLayout } from './layouts/Auth/AuthLayout';
 import { createHashRouter } from 'react-router-dom';
 import { RouterProvider } from 'react-router-dom';
 import Register from './pages/Register/Register';
- 
+import Login from './pages/Login/Login';
+import { Layout } from './layouts/Menu/Layout';
+import Menu from './pages/Menu/Menu';
+import { Error as ErrorPage } from './pages/Error/Error';
 const router = createHashRouter([
   {
     path: '/',
-    element: <AuthLayout/>,
-    children: [ 
+    element: <Layout/>,
+    children: [
       {
         path: '/',
-        element: <Register/>
+        element:  <Suspense fallback={<>Загрузка</>}><Menu/></Suspense>
       }
     ]
   },
+  {
+    path: '/auth',
+    element: <AuthLayout/>,
+    children: [ 
+      {
+        path: 'register',
+        element: <Register/>
+      },
+      {
+        path: 'login',
+        element: <Login/>
+      }
+    ]
+  },
+  {
+    path: '*',
+    element: <ErrorPage/>
+  }
 ]);
+
+
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

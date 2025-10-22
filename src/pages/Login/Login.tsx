@@ -3,36 +3,30 @@ import Input from "../../components/InputAuth/Input";
 import userIcon from '../../assets/icons/user.svg';
 import passwordIcon from '../../assets/icons/password.svg';
 import { Link } from "react-router-dom";
-const Register = () => {
+const  Login = () => {
     return (
       <div className="bg-white w-[408px]  ">
         <form className="flex flex-col gap-[53px]">
-          <H tag="h2">Create your account</H> 
-          <div className="flex flex-col gap-[28px]">
-            <p className="text-[16px] sora">enter your full details</p>
-            <div className="flex flex-col gap-[10px]">
+          <H tag="h2">Login your account!</H>  
+           <div className="flex flex-col gap-[10px]">
                 <Input placeholder="Username" name="userName" type="text" logo={userIcon}/>
                 <Input placeholder="Username2" type="password" name="userPassword" logo={passwordIcon}/>
-                <div className="flex gap-[12px] items-center">
-                    <input type="checkbox" className="w-[14px] h-[14px] bg-[#56BFFF]"/>
-                    <p className="text-[#56BFFF] text-[14px]">remember me</p>
-                </div>
+
                 <button className="bg-[#A3DCFF] text-[16px] py-[16px] text-white">
                   Continue
                 </button>
                 <div className="flex gap-0">
                   <div className="text-[16px]">
-                    have an account ?
+                    don't have an account yet ?
                   </div>
                   <Link to="fdfef" className="text-[#A3DCFF] text-[16px]">
-                    Sign up
+                    Create an account
                   </Link>
                 </div>
-            </div>
-          </div> 
+           </div>
         </form>
       </div>
     )
 }
 
-export default Register;
+export default Login;
