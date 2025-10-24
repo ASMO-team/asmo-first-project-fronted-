@@ -1,0 +1,31 @@
+.menu {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 
+        minmax(0, 10px)    /* Почти нет отступов */
+        minmax(500px, 1fr) /* Максимально широкие центральные колонки */
+        minmax(500px, 1fr) /* Максимально широкие центральные колонки */
+        minmax(0, 10px);   /* Почти нет отступов */
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 
+        '. sidebar header .'
+        '. sidebar content .';
+    gap:  20px 24px; /* Больше пространства между колонками */
+}
+
+.header {
+    grid-area: header;
+ 
+    
+}
+
+ 
+.sidebar {
+    grid-area: sidebar;
+    min-height: 100%;
+}
+
+.content {
+    grid-area: content;
+    min-height: 100%;
+}
